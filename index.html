@@ -66,7 +66,31 @@ header h1 {
         <h1>Mi Amor Accessories</h1>
         A love that's always by your side</p>
     </header>
+<audio id="bg-music" loop>
+  <source src="palagi.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
 
+<button onclick="toggleAudio()" style="background-color: #F8C8DC; border-radius: 8px; padding: 10px 20px; color: white; border: none; text-align: center; display: block; margin: 0 auto;">Pause Music</button>
+
+<script>
+  var audio = document.getElementById("bg-music");
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      document.querySelector('button').textContent = 'Pause Music';
+    } else {
+      audio.pause();
+      document.querySelector('button').textContent = 'Play Music';
+    }
+  }
+
+  // Autoplay the music when the page loads
+  window.onload = function() {
+    audio.play();
+  };
+</script>
     <div id="products">
         <div class="product">
             <img src="fleur.jpeg" alt="Product 1">
